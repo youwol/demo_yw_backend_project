@@ -1,6 +1,6 @@
 [project]
 name = "demo_yw_backend"
-version = "0.1.1"
+version = "0.2.0"
 description = "A backend created by the youwol's pipeline 'pipeline_python_backend'."
 requires-python = "~=3.10"
 classifiers = [
@@ -11,15 +11,44 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    "youwol>=0.1.12",
-    "cowsay>=6.1,<7.0.0"
+    "fastapi>=0.109.1,<0.110.0",
+    "uvicorn>=0.24,<0.25",
+    "cowsay>=6.1,<7.0.0",
+    "yw_clients"
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pip-tools",
+    "pip-audit",
+    "pylint",
+    "pycodestyle",
+    "pydocstyle",
+    "isort",
+    "black[d]",
+    "mypy","pdoc3",
+    "build",
+    "twine",
+]
 [build-system]
 requires = [
     "setuptools>=67.7.2",
 ]
 
+[tool.setuptools]
+packages = ["demo_yw_backend"]
+
+[tool.isort]
+profile = "black"
+
+[tool.pylint.'MESSAGES CONTROL']
+extension-pkg-whitelist = "pydantic"
+
+[tool.mypy]
+# ignore_missing_imports = true
+
+[project.scripts]
+run_demo_yw_backend = "demo_yw_backend.main_docker:main"
+
 [youwol]
 default-port = 2010
-
