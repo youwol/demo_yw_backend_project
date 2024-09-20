@@ -1,7 +1,7 @@
 {
     "name": "demo_yw_backend",
-    "version": "0.1.1",
-    "main": "start.sh",
+    "version": "0.2.0",
+    "main": "dist/demo_yw_backend-0.2.0-py3-none-any.whl",
     "webpm": {
         "type": "backend"
     }
