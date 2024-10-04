@@ -14,7 +14,7 @@ dependencies = [
     "fastapi>=0.109.1,<0.110.0",
     "uvicorn>=0.24,<0.25",
     "cowsay>=6.1,<7.0.0",
-    "yw_clients"
+    "yw_clients==0.1.13.dev0"
 ]
 
 [project.optional-dependencies]
@@ -26,7 +26,8 @@ dev = [
     "pydocstyle",
     "isort",
     "black[d]",
-    "mypy","pdoc3",
+    "mypy",
+    "pdoc",
     "build",
     "twine",
 ]
